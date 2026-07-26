@@ -11,28 +11,6 @@ function Todo() {
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  useEffect(() => {
-    async function fetchTodos() {
-      try {
-        const response = await fetch(TODO_API_URL);
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch todos");
-        }
-
-        const data = await response.json();
-        const todoList = Array.isArray(data) ? data : [data];
-        setTodos(todoList);
-      } catch (err) {
-        setError(err.message || "Something went wrong");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchTodos();
-  }, []);
-
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -122,7 +100,7 @@ function Todo() {
 
   return (
     <section>
-      <h1>TODO App</h1>
+      <h2>TODO App</h2>
 
       <form onSubmit={handleSubmit} className="todo-form">
         <input
