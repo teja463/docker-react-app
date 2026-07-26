@@ -1,5 +1,4 @@
 import "./App.css";
-import { Hello } from "./Hello";
 import Todo from "./Todo";
 
 function App() {

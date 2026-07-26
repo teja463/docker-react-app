@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+// const TODO_API_URL = "http://localhost:8080/todo";
 const TODO_API_URL = "/api/todo";
 
 function Todo() {
