@@ -1,11 +1,16 @@
 import "./App.css";
+import { Hello } from "./Hello";
 import Todo from "./Todo";
 
 function App() {
   return (
     <main>
-      <h1>Demo App</h1>
-      <Todo />
+      <div>
+        <Hello />
+      </div>
+      <div>
+        <Todo />
+      </div>
     </main>
   );
 }

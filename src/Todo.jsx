@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import C from "./Constants";
 
-// const TODO_API_URL = "http://localhost:8080/todo";
-const TODO_API_URL = "/api/todo";
 
 function Todo() {
   const [todos, setTodos] = useState([]);
@@ -10,7 +9,7 @@ function Todo() {
   const [newTodo, setNewTodo] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
-
+  const TODO_API_URL = `${C.ROOT_URL}/todo`;
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -100,7 +99,7 @@ function Todo() {
 
   return (
     <section>
-      <h2>TODO App</h2>
+      <h1>TODO App</h1>
 
       <form onSubmit={handleSubmit} className="todo-form">
         <input
