@@ -1,23 +1,12 @@
-import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
+import { Hello } from "./Hello";
+import Todo from "./Todo";
 
 function App() {
-  const [data, setData] = useState({});
-  useEffect(() => { getData()}, []);
-
-  async function getData() {
-    const res = await fetch("/api/hello");
-    const data = await res.json();
-    setData(data);
-  }
   return (
-    <>
-      <h1>Hello</h1>
-      <h2>{data.name}</h2>
-      <h2>{data.time}</h2>
-    </>
+    <main>
+      <Todo />
+    </main>
   );
 }
 

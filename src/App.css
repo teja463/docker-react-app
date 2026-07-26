@@ -2,41 +2,85 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo-form {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.todo-form input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
-.card {
-  padding: 2em;
+.todo-form button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.todo-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-item:hover {
+  background-color: #f0f7ff;
+  box-shadow: 0 0 0 1px #bfdbfe inset;
+}
+
+.todo-item:hover::after {
+  content: "Click to toggle";
+  font-size: 0.8rem;
+  color: #2563eb;
+  margin-left: auto;
+}
+
+.completed {
+  color: green;
+  font-weight: 600;
+}
+
+.pending {
+  color: #b36b00;
+  font-weight: 600;
+}
+
+.error {
+  color: #dc2626;
+  margin-bottom: 1rem;
 }
