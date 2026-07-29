@@ -1,13 +1,13 @@
 import "./App.css";
-import { Hello } from "./Hello";
+// import { Hello } from "./Hello";
 import Todo from "./Todo";
 
 function App() {
   return (
     <main>
-      <div>
+      {/* <div>
         <Hello />
-      </div>
+      </div> */}
       <div>
         <Todo />
       </div>
